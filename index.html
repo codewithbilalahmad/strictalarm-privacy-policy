@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#191A20" />
-<meta name="description" content="Privacy Policy for StrictAlarm — an on-device alarm and wake-up mission app by Muhammad LLC. No servers, no data selling, all data stays on your device." />
+<meta name="description" content="Privacy Policy for StrictAlarm — an on-device alarm and wake-up mission app by Muhammad LLC. Alarms and missions stay on your device; ads are served by Google AdMob and purchases are managed by RevenueCat." />
 <title>Privacy Policy — StrictAlarm</title>
 
 <!-- App icon as favicon -->
@@ -579,6 +579,78 @@
   .card p:last-child{margin-bottom:0;}
   .card p strong{color:var(--on-surface);font-weight:600;}
 
+  /* Policy links inside cards */
+  .card p a, .sub-block a{
+    color:var(--gold);
+    text-decoration:underline;
+    text-underline-offset:2px;
+    text-decoration-thickness:1px;
+    word-break:break-word;
+  }
+  .card p a:hover, .sub-block a:hover{color:#fff8d6;}
+
+  /* ================= SUB-BLOCKS (Ads / Purchases) ================= */
+  .sub-block{
+    margin-top:20px;
+    padding:22px 24px;
+    border-radius:14px;
+    background:rgba(25,26,32,.5);
+    border:1px solid var(--outline-soft);
+    transition:background .25s var(--ease), border-color .25s var(--ease);
+  }
+  .sub-block:hover{
+    background:rgba(25,26,32,.68);
+    border-color:rgba(255,208,0,.16);
+  }
+  .sub-block h3{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:9px;
+    margin:0 0 13px;
+    font-size:1.02rem;
+    font-weight:650;
+    line-height:1.35;
+    color:var(--on-surface);
+    letter-spacing:-.01em;
+  }
+  .sub-badge{
+    display:inline-flex;
+    align-items:center;
+    padding:3px 9px;
+    border-radius:6px;
+    font-size:.62rem;
+    font-weight:750;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+    background:rgba(255,208,0,.1);
+    border:1px solid rgba(255,208,0,.22);
+    white-space:nowrap;
+  }
+  .sub-block p{
+    margin:0 0 11px;
+    font-size:.93rem;
+    line-height:1.7;
+    color:var(--on-surface-var);
+  }
+  .sub-block p:last-child{margin-bottom:0;}
+  .sub-block p strong{color:var(--on-surface);font-weight:600;}
+  .sub-block ul{
+    margin:0 0 13px;
+    padding-left:20px;
+    list-style:disc;
+    font-size:.92rem;
+    line-height:1.68;
+    color:var(--on-surface-var);
+  }
+  .sub-block ul li{
+    margin-bottom:5px;
+    padding-left:2px;
+  }
+  .sub-block ul li::marker{color:var(--gold);}
+  .sub-block ul li:last-child{margin-bottom:0;}
+
   /* ================= PERMISSIONS ================= */
   .perm-grid{
     display:grid;
@@ -691,6 +763,12 @@
     color:var(--slate-pale);
   }
   .note-body strong{color:var(--on-surface);font-weight:600;}
+  .note-body a{
+    color:var(--gold);
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+  .note-body a:hover{color:#fff8d6;}
 
   /* ================= CONTACT ================= */
   .contact-grid{
@@ -919,6 +997,8 @@
     .trust-num{font-size:1.4rem;}
     .perm{padding:16px;gap:13px;}
     .perm-icon{width:34px;height:34px;}
+    .sub-block{padding:18px 18px;}
+    .sub-block h3{font-size:.97rem;}
     .to-top{right:16px;bottom:16px;width:44px;height:44px;}
     .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
     .brand{margin-bottom:24px;}
@@ -969,9 +1049,10 @@
 
     <h1>Privacy Policy</h1>
     <p class="lede">
-      StrictAlarm is a fully on-device alarm and wake-up mission app. Your alarms, mission
-      settings, and preferences stay on your phone — we do not run backend servers that
-      collect, sell, or rent your personal data.
+      StrictAlarm is an on-device alarm and wake-up mission app. Your alarms, mission settings,
+      and preferences stay on your phone — we do not run our own backend servers for them.
+      Optional ads and the one-time premium purchase rely on trusted third parties
+      (Google AdMob and RevenueCat), described in Section 04.
     </p>
 
     <div class="meta">
@@ -981,7 +1062,7 @@
       </span>
       <span class="pill">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        ~5 min read
+        ~7 min read
       </span>
       <span class="pill">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
@@ -992,15 +1073,15 @@
     <div class="trust-stats" aria-label="Key privacy facts">
       <div class="trust-stat">
         <span class="trust-num">0</span>
-        <span class="trust-label">Backend servers</span>
+        <span class="trust-label">Backend servers we run</span>
       </div>
       <div class="trust-stat">
         <span class="trust-num">100%</span>
-        <span class="trust-label">On-device processing</span>
+        <span class="trust-label">Alarm &amp; mission data on-device</span>
       </div>
       <div class="trust-stat">
         <span class="trust-num">0</span>
-        <span class="trust-label">Data sold or shared</span>
+        <span class="trust-label">Alarm data sold or shared</span>
       </div>
     </div>
   </div>
@@ -1015,11 +1096,12 @@
       <a href="#overview"><span class="toc-num">01</span>Overview</a>
       <a href="#local-data"><span class="toc-num">02</span>Data stored on device</a>
       <a href="#permissions"><span class="toc-num">03</span>Permissions</a>
-      <a href="#third-party"><span class="toc-num">04</span>Third-party services</a>
-      <a href="#retention"><span class="toc-num">05</span>Retention &amp; deletion</a>
-      <a href="#children"><span class="toc-num">06</span>Children's privacy</a>
-      <a href="#changes"><span class="toc-num">07</span>Policy changes</a>
-      <a href="#contact"><span class="toc-num">08</span>Contact us</a>
+      <a href="#ads-purchases"><span class="toc-num">04</span>Ads &amp; purchases</a>
+      <a href="#third-party"><span class="toc-num">05</span>Other third parties</a>
+      <a href="#retention"><span class="toc-num">06</span>Retention &amp; deletion</a>
+      <a href="#children"><span class="toc-num">07</span>Children's privacy</a>
+      <a href="#changes"><span class="toc-num">08</span>Policy changes</a>
+      <a href="#contact"><span class="toc-num">09</span>Contact us</a>
     </nav>
 
     <div class="toc-contact">
@@ -1042,11 +1124,11 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
           The short version
         </span>
-        <h2>Your data stays on your device. Full stop.</h2>
+        <h2>Your alarms and missions stay on your device.</h2>
         <ul>
           <li>
             <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span>No backend servers. StrictAlarm does not upload your alarms, missions, or settings anywhere.</span>
+            <span><strong style="color:var(--on-surface)">We don't run our own backend servers.</strong> Your alarms, missions, and settings are stored locally on your phone.</span>
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -1054,7 +1136,11 @@
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span>You can delete everything at any time by clearing the app's storage in Android Settings or uninstalling the app.</span>
+            <span><strong style="color:var(--on-surface)">To keep StrictAlarm free</strong>, optional ads are served by Google AdMob, and the one-time premium purchase is managed by RevenueCat. See <a href="#ads-purchases" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Section 04</a> for exactly what these services handle.</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>You can delete all local app data at any time by clearing the app's storage in Android Settings or uninstalling the app.</span>
           </li>
         </ul>
       </div>
@@ -1077,10 +1163,16 @@
         you use the App on Android.
       </p>
       <p>
-        StrictAlarm is designed to function as an on-device alarm and wake-up mission utility.
-        We do not operate external backend servers to collect, sell, rent, or monetize your
-        personal data. Your alarms, wake-up mission preferences, and app settings are stored
+        StrictAlarm is designed as an on-device alarm and wake-up mission utility. We do not
+        operate external backend servers to collect, sell, rent, or monetize your alarm or
+        mission data. Your alarms, wake-up mission preferences, and app settings are stored
         locally on your device.
+      </p>
+      <p>
+        StrictAlarm is free to use and supported by ads, with an optional one-time premium
+        purchase. Delivering ads and processing purchases requires two trusted third-party
+        services — <strong>Google AdMob</strong> and <strong>RevenueCat</strong>. Their data
+        practices are described in <a href="#ads-purchases">Section 04</a>.
       </p>
     </section>
 
@@ -1123,6 +1215,14 @@
             time limits, and onboarding/permission states.
           </dd>
         </div>
+        <div class="def">
+          <dt>Premium Unlock Status</dt>
+          <dd>
+            A local cache indicating that your one-time premium purchase has been unlocked, so
+            premium features work offline. The authoritative purchase record lives with Google
+            Play and RevenueCat (see <a href="#ads-purchases" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Section 04</a>).
+          </dd>
+        </div>
       </dl>
     </section>
 
@@ -1138,8 +1238,8 @@
         </div>
       </div>
       <p>
-        StrictAlarm requests specific Android permissions solely to deliver alarm reliability
-        and optional wake-up missions:
+        StrictAlarm requests specific Android permissions to deliver alarm reliability, optional
+        wake-up missions, ads, and in-app purchases:
       </p>
 
       <div class="perm-grid">
@@ -1246,6 +1346,27 @@
           </div>
         </div>
 
+        <div class="perm">
+          <div class="perm-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div class="perm-body">
+            <p class="perm-title">Advertising &amp; in-app purchases</p>
+            <div class="chips">
+              <code>com.google.android.gms.permission.AD_ID</code>
+              <code>INTERNET</code>
+              <code>ACCESS_NETWORK_STATE</code>
+              <code>com.android.vending.BILLING</code>
+            </div>
+            <p class="perm-desc">
+              <code style="background:none;border:none;padding:0;color:inherit;font-family:inherit;">AD_ID</code> is used by Google AdMob to deliver ads (you can reset or opt out in
+              Android settings). INTERNET and ACCESS_NETWORK_STATE let the App load ads and verify
+              purchases. BILLING is required to process the optional one-time premium purchase
+              through Google Play.
+            </p>
+          </div>
+        </div>
+
       </div>
 
       <div class="note">
@@ -1259,14 +1380,92 @@
     </section>
 
     <!-- 04 -->
+    <section class="card reveal" id="ads-purchases">
+      <div class="card-head">
+        <div class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <div class="sec-title-wrap">
+          <span class="sec-num">Section 04</span>
+          <h2>Ads &amp; In-App Purchases</h2>
+        </div>
+      </div>
+      <p>
+        StrictAlarm is free to use and supported by advertising. A one-time premium purchase is
+        available to remove ads and unlock premium features. To deliver both, StrictAlarm uses
+        two trusted third-party services — <strong>Google AdMob</strong> for ads and
+        <strong>RevenueCat</strong> for purchase management. Each service processes data under
+        its own privacy policy.
+      </p>
+
+      <div class="sub-block">
+        <h3><span class="sub-badge">AdMob</span>Google AdMob — Advertising</h3>
+        <p>
+          Ads shown inside StrictAlarm are served by <strong>Google AdMob</strong>. To deliver
+          and measure ads, AdMob may collect:
+        </p>
+        <ul>
+          <li>Your Android Advertising ID (AAID)</li>
+          <li>IP address and approximate location derived from it</li>
+          <li>Device type, OS version, language, and similar technical information</li>
+          <li>Ad impressions, clicks, and interactions with the ad</li>
+          <li>General app usage related to ad delivery</li>
+        </ul>
+        <p>
+          Ads may be personalized or non-personalized. You can reset or delete your advertising
+          ID and opt out of personalized ads at any time in
+          <strong>Android Settings → Google → Ads</strong>. Learn more in Google's privacy policy:
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+        </p>
+      </div>
+
+      <div class="sub-block">
+        <h3><span class="sub-badge">RevenueCat</span>RevenueCat — In-App Purchases</h3>
+        <p>
+          The optional one-time premium purchase is processed by <strong>Google Play Billing</strong>
+          and managed by <strong>RevenueCat</strong>. To validate your purchase and unlock premium
+          features (including after reinstalling the App), RevenueCat receives:
+        </p>
+        <ul>
+          <li>An anonymous app user ID generated for your install</li>
+          <li>The purchase receipt and entitlement status from Google Play</li>
+          <li>Basic device and platform information (OS, app version, country)</li>
+        </ul>
+        <p>
+          RevenueCat does <strong>not</strong> receive your payment card details — those are
+          handled entirely by Google Play. Learn more in RevenueCat's privacy policy:
+          <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.
+        </p>
+      </div>
+
+      <div class="note">
+        <svg class="note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <div class="note-body">
+          <strong>Premium status on device.</strong> The App caches your premium unlock status
+          locally so premium features work offline. The authoritative purchase record lives with
+          Google Play and RevenueCat. If you have ads or tracking disabled at the Android OS level,
+          you may still see non-personalized ads.
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 -->
     <section class="card reveal" id="third-party">
       <div class="card-head">
         <div class="sec-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
         <div class="sec-title-wrap">
-          <span class="sec-num">Section 04</span>
-          <h2>Third-Party Services &amp; Links</h2>
+          <span class="sec-num">Section 05</span>
+          <h2>Other Third-Party Services &amp; Links</h2>
         </div>
       </div>
       <p>
@@ -1281,14 +1480,14 @@
       </p>
     </section>
 
-    <!-- 05 -->
+    <!-- 06 -->
     <section class="card reveal" id="retention">
       <div class="card-head">
         <div class="sec-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         </div>
         <div class="sec-title-wrap">
-          <span class="sec-num">Section 05</span>
+          <span class="sec-num">Section 06</span>
           <h2>Data Retention &amp; Deletion</h2>
         </div>
       </div>
@@ -1297,16 +1496,21 @@
         and configurations inside the App at any time, or remove all local app data by clearing
         the App's storage in Android Settings or uninstalling StrictAlarm.
       </p>
+      <p>
+        Data handled by third-party services (Google AdMob, RevenueCat, Google Play) is retained
+        according to each provider's own privacy policy. You can reset your advertising ID or
+        request deletion of associated data through the links in <a href="#ads-purchases">Section 04</a>.
+      </p>
     </section>
 
-    <!-- 06 -->
+    <!-- 07 -->
     <section class="card reveal" id="children">
       <div class="card-head">
         <div class="sec-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="sec-title-wrap">
-          <span class="sec-num">Section 06</span>
+          <span class="sec-num">Section 07</span>
           <h2>Children's Privacy</h2>
         </div>
       </div>
@@ -1315,33 +1519,39 @@
         digital consent in your jurisdiction), and we do not knowingly collect personal
         information from children.
       </p>
+      <p>
+        Ad delivery through Google AdMob is not directed to children, and the ad-supported App
+        should not be used by children under 13. If you believe a child has used the App, please
+        contact us so we can help.
+      </p>
     </section>
 
-    <!-- 07 -->
+    <!-- 08 -->
     <section class="card reveal" id="changes">
       <div class="card-head">
         <div class="sec-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
         </div>
         <div class="sec-title-wrap">
-          <span class="sec-num">Section 07</span>
+          <span class="sec-num">Section 08</span>
           <h2>Changes to This Privacy Policy</h2>
         </div>
       </div>
       <p>
-        We may update this Privacy Policy from time to time to reflect changes in App features
-        or legal requirements. Any updates will be posted with a revised Last Updated date.
+        We may update this Privacy Policy from time to time to reflect changes in App features,
+        third-party services, or legal requirements. Any updates will be posted with a revised
+        Last Updated date.
       </p>
     </section>
 
-    <!-- 08 -->
+    <!-- 09 -->
     <section class="card reveal" id="contact">
       <div class="card-head">
         <div class="sec-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <div class="sec-title-wrap">
-          <span class="sec-num">Section 08</span>
+          <span class="sec-num">Section 09</span>
           <h2>Contact Us</h2>
         </div>
       </div>
@@ -1400,7 +1610,7 @@
     </div>
     <div class="footer-links">
       <a href="#overview">Overview</a>
-      <a href="#permissions">Permissions</a>
+      <a href="#ads-purchases">Ads &amp; Purchases</a>
       <a href="#contact">Contact</a>
     </div>
     <span>Last updated November 21, 2026</span>
@@ -1433,7 +1643,7 @@
     var progress = document.getElementById('readProgress');
     var toTop = document.getElementById('toTop');
     var ring = document.getElementById('ringFill');
-    var circumference = 2 * Math.PI * 21; // ≈ 131.95
+    var circumference = 2 * Math.PI * 21;
     var ticking = false;
 
     ring.style.strokeDasharray = circumference;
@@ -1475,7 +1685,6 @@
   (function () {
     var imgs = document.querySelectorAll('.header-icon');
     Array.prototype.forEach.call(imgs, function (img) {
-      // Catch images that already failed before this script ran
       if (img.complete && img.naturalWidth === 0) {
         img.classList.add('is-missing');
       }
@@ -1511,14 +1720,12 @@
           }
         });
 
-        // Pick the most visible section
         var bestId = null;
         var bestRatio = -1;
         visible.forEach(function (ratio, id) {
           if (ratio > bestRatio) { bestRatio = ratio; bestId = id; }
         });
 
-        // Fallback: if nothing is intersecting, pick the last section above viewport top
         if (!bestId) {
           var scrollY = window.scrollY + 120;
           sections.forEach(function (sec) {
