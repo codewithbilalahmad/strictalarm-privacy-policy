@@ -6,6 +6,11 @@
 <meta name="theme-color" content="#191A20" />
 <meta name="description" content="Privacy Policy for StrictAlarm — an on-device alarm and wake-up mission app by Muhammad LLC. No servers, no data selling, all data stays on your device." />
 <title>Privacy Policy — StrictAlarm</title>
+
+<!-- App icon as favicon -->
+<link rel="icon" type="image/webp" href="logo.webp" />
+<link rel="apple-touch-icon" href="logo.webp" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -142,19 +147,54 @@
     gap:14px;
     margin-bottom:32px;
   }
-  .app-icon{
-    width:56px;height:56px;
+
+  /* ---------- LOGO (image + fallback) ---------- */
+  .logo-wrap{
+    position:relative;
     flex:none;
-    display:grid;place-items:center;
+    width:56px;
+    height:56px;
     border-radius:16px;
+    overflow:hidden;
+    isolation:isolate;
     background:linear-gradient(150deg, var(--gold), var(--gold-dim));
-    color:#000;
     box-shadow:
       0 14px 34px -10px rgba(255,208,0,.55),
       0 0 0 1px rgba(255,208,0,.25),
       inset 0 1px 0 rgba(255,255,255,.35);
   }
-  .app-icon svg{width:28px;height:28px;}
+  .header-icon{
+    position:relative;
+    z-index:1;
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:inherit;
+  }
+  .logo-fallback{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    display:none;
+    place-items:center;
+    color:#000;
+  }
+  .logo-fallback svg{width:28px;height:28px;}
+  .header-icon.is-missing{display:none;}
+  .header-icon.is-missing + .logo-fallback{display:grid;}
+
+  /* small logo variant (footer) */
+  .logo-wrap.sm{
+    width:30px;
+    height:30px;
+    border-radius:9px;
+    box-shadow:
+      0 6px 16px -6px rgba(255,208,0,.5),
+      0 0 0 1px rgba(255,208,0,.2);
+  }
+  .logo-wrap.sm .logo-fallback svg{width:16px;height:16px;}
+
   .brand-text{
     display:flex;
     flex-direction:column;
@@ -733,14 +773,6 @@
     align-items:center;
     gap:10px;
   }
-  .footer-logo{
-    width:26px;height:26px;
-    display:grid;place-items:center;
-    border-radius:7px;
-    background:linear-gradient(150deg, var(--gold), var(--gold-dim));
-    color:#000;
-  }
-  .footer-logo svg{width:14px;height:14px;}
   .footer-links{
     display:flex;
     gap:18px;
@@ -891,6 +923,8 @@
     .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
     .brand{margin-bottom:24px;}
     .hero h1{max-width:none;}
+    .logo-wrap{width:50px;height:50px;border-radius:14px;}
+    .logo-fallback svg{width:25px;height:25px;}
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -915,13 +949,17 @@
 
   <div class="hero-inner">
     <div class="brand">
-      <div class="app-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="13" r="8"/>
-          <path d="M12 9.5V13l2.6 2.2"/>
-          <path d="M4.5 3.2 2 5.8"/>
-          <path d="M19.5 3.2 22 5.8"/>
-        </svg>
+      <!-- Logo: place logo.webp next to this HTML file -->
+      <div class="logo-wrap">
+        <img class="header-icon" src="logo.webp" alt="StrictAlarm icon" width="56" height="56" onerror="this.classList.add('is-missing')" />
+        <span class="logo-fallback" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="13" r="8"/>
+            <path d="M12 9.5V13l2.6 2.2"/>
+            <path d="M4.5 3.2 2 5.8"/>
+            <path d="M19.5 3.2 22 5.8"/>
+          </svg>
+        </span>
       </div>
       <div class="brand-text">
         <span class="brand-name">StrictAlarm</span>
@@ -1349,11 +1387,14 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
-      <div class="footer-logo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="13" r="8"/>
-          <path d="M12 9.5V13l2.6 2.2"/>
-        </svg>
+      <div class="logo-wrap sm">
+        <img class="header-icon" src="logo.webp" alt="" aria-hidden="true" width="30" height="30" onerror="this.classList.add('is-missing')" />
+        <span class="logo-fallback" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="13" r="8"/>
+            <path d="M12 9.5V13l2.6 2.2"/>
+          </svg>
+        </span>
       </div>
       <span>© 2026 Muhammad LLC · StrictAlarm</span>
     </div>
@@ -1425,6 +1466,25 @@
 
     toTop.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  /* ============================================================
+     LOGO FALLBACK (if logo.webp fails to load, show clock icon)
+     ============================================================ */
+  (function () {
+    var imgs = document.querySelectorAll('.header-icon');
+    Array.prototype.forEach.call(imgs, function (img) {
+      // Catch images that already failed before this script ran
+      if (img.complete && img.naturalWidth === 0) {
+        img.classList.add('is-missing');
+      }
+      img.addEventListener('error', function () {
+        img.classList.add('is-missing');
+      });
+      img.addEventListener('load', function () {
+        img.classList.remove('is-missing');
+      });
     });
   })();
 
