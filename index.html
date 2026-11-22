@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#191A20" />
 <meta name="description" content="Privacy Policy for StrictAlarm — an on-device alarm and wake-up mission app by Muhammad LLC. Alarms and missions stay on your device; ads are served by Google AdMob and purchases are managed by RevenueCat." />
 <title>Privacy Policy — StrictAlarm</title>
 
-<!-- App icon as favicon -->
 <link rel="icon" type="image/webp" href="logo.webp" />
 <link rel="apple-touch-icon" href="logo.webp" />
 
@@ -41,7 +40,11 @@
 
   *,*::before,*::after{box-sizing:border-box;}
 
-  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
+  html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+    scroll-padding-top:16px;
+  }
 
   body{
     margin:0;
@@ -53,6 +56,7 @@
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
     overflow-x:hidden;
+    min-width:320px;
   }
 
   ::selection{background:rgba(255,208,0,.3);color:#fff;}
@@ -60,7 +64,7 @@
   a{color:var(--slate);text-decoration:none;transition:color .18s var(--ease);}
   a:hover{color:var(--gold);}
 
-  img,svg{display:block;}
+  img,svg{display:block;max-width:100%;}
 
   /* ================= READING PROGRESS ================= */
   .read-progress{
@@ -184,7 +188,6 @@
   .header-icon.is-missing{display:none;}
   .header-icon.is-missing + .logo-fallback{display:grid;}
 
-  /* small logo variant (footer) */
   .logo-wrap.sm{
     width:30px;
     height:30px;
@@ -199,6 +202,7 @@
     display:flex;
     flex-direction:column;
     gap:1px;
+    min-width:0;
   }
   .brand-name{
     font-weight:700;
@@ -218,18 +222,19 @@
 
   .hero h1{
     margin:0 0 18px;
-    font-size:clamp(2.3rem, 5.4vw, 3.6rem);
+    font-size:clamp(2.1rem, 5.4vw, 3.6rem);
     line-height:1.08;
     letter-spacing:-.035em;
     font-weight:800;
     color:var(--on-surface);
     max-width:20ch;
+    overflow-wrap:break-word;
   }
 
   .lede{
     margin:0 0 32px;
     max-width:62ch;
-    font-size:clamp(1rem, 1.6vw, 1.13rem);
+    font-size:clamp(.98rem, 1.6vw, 1.13rem);
     line-height:1.65;
     color:var(--on-surface-var);
   }
@@ -254,6 +259,7 @@
     border:1px solid var(--outline);
     backdrop-filter:blur(8px);
     -webkit-backdrop-filter:blur(8px);
+    white-space:nowrap;
   }
   .pill.accent{
     color:var(--gold);
@@ -266,13 +272,14 @@
     background:var(--gold);
     box-shadow:0 0 0 0 rgba(255,208,0,.6);
     animation:pulse 2.4s infinite;
+    flex:none;
   }
   @keyframes pulse{
     0%{box-shadow:0 0 0 0 rgba(255,208,0,.55);}
     70%{box-shadow:0 0 0 8px rgba(255,208,0,0);}
     100%{box-shadow:0 0 0 0 rgba(255,208,0,0);}
   }
-  .pill svg{width:14px;height:14px;opacity:.85;}
+  .pill svg{width:14px;height:14px;opacity:.85;flex:none;}
 
   .trust-stats{
     display:grid;
@@ -437,7 +444,6 @@
   /* ================= MAIN CONTENT ================= */
   main{min-width:0;}
 
-  /* Short version */
   .short{
     position:relative;
     margin-bottom:32px;
@@ -478,13 +484,14 @@
     background:rgba(255,208,0,.1);
     border:1px solid rgba(255,208,0,.25);
   }
-  .short-eyebrow svg{width:12px;height:12px;}
+  .short-eyebrow svg{width:12px;height:12px;flex:none;}
   .short h2{
     margin:0 0 18px;
     font-size:1.28rem;
     font-weight:700;
     letter-spacing:-.02em;
     color:var(--on-surface);
+    line-height:1.35;
   }
   .short ul{
     position:relative;
@@ -551,6 +558,7 @@
   .sec-title-wrap{
     min-width:0;
     padding-top:2px;
+    flex:1;
   }
   .sec-num{
     display:block;
@@ -569,27 +577,28 @@
     font-weight:700;
     letter-spacing:-.02em;
     color:var(--on-surface);
+    overflow-wrap:break-word;
   }
   .card p{
     margin:0 0 15px;
     font-size:.965rem;
     line-height:1.72;
     color:var(--on-surface-var);
+    overflow-wrap:break-word;
   }
   .card p:last-child{margin-bottom:0;}
   .card p strong{color:var(--on-surface);font-weight:600;}
 
-  /* Policy links inside cards */
-  .card p a, .sub-block a{
+  .card p a, .sub-block a, .note-body a{
     color:var(--gold);
     text-decoration:underline;
     text-underline-offset:2px;
     text-decoration-thickness:1px;
     word-break:break-word;
   }
-  .card p a:hover, .sub-block a:hover{color:#fff8d6;}
+  .card p a:hover, .sub-block a:hover, .note-body a:hover{color:#fff8d6;}
 
-  /* ================= SUB-BLOCKS (Ads / Purchases) ================= */
+  /* ================= SUB-BLOCKS ================= */
   .sub-block{
     margin-top:20px;
     padding:22px 24px;
@@ -613,6 +622,7 @@
     line-height:1.35;
     color:var(--on-surface);
     letter-spacing:-.01em;
+    overflow-wrap:break-word;
   }
   .sub-badge{
     display:inline-flex;
@@ -633,6 +643,7 @@
     font-size:.93rem;
     line-height:1.7;
     color:var(--on-surface-var);
+    overflow-wrap:break-word;
   }
   .sub-block p:last-child{margin-bottom:0;}
   .sub-block p strong{color:var(--on-surface);font-weight:600;}
@@ -647,6 +658,7 @@
   .sub-block ul li{
     margin-bottom:5px;
     padding-left:2px;
+    overflow-wrap:break-word;
   }
   .sub-block ul li::marker{color:var(--gold);}
   .sub-block ul li:last-child{margin-bottom:0;}
@@ -688,6 +700,7 @@
     font-weight:650;
     color:var(--on-surface);
     line-height:1.35;
+    overflow-wrap:break-word;
   }
   .chips{
     display:flex;
@@ -704,13 +717,17 @@
     color:var(--gold);
     background:rgba(255,208,0,.07);
     border:1px solid rgba(255,208,0,.2);
-    white-space:nowrap;
+    white-space:normal;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    max-width:100%;
   }
   .perm-desc{
     margin:0;
     font-size:.915rem;
     line-height:1.62;
     color:var(--on-surface-var);
+    overflow-wrap:break-word;
   }
 
   /* ================= DEFINITION ROWS ================= */
@@ -733,12 +750,14 @@
     color:var(--on-surface);
     margin-bottom:5px;
     line-height:1.4;
+    overflow-wrap:break-word;
   }
   .def dd{
     margin:0;
     font-size:.92rem;
     line-height:1.62;
     color:var(--on-surface-var);
+    overflow-wrap:break-word;
   }
 
   /* ================= NOTE ================= */
@@ -761,14 +780,10 @@
     font-size:.92rem;
     line-height:1.65;
     color:var(--slate-pale);
+    min-width:0;
+    overflow-wrap:break-word;
   }
   .note-body strong{color:var(--on-surface);font-weight:600;}
-  .note-body a{
-    color:var(--gold);
-    text-decoration:underline;
-    text-underline-offset:2px;
-  }
-  .note-body a:hover{color:#fff8d6;}
 
   /* ================= CONTACT ================= */
   .contact-grid{
@@ -784,6 +799,7 @@
     background:rgba(25,26,32,.5);
     border:1px solid var(--outline-soft);
     transition:border-color .25s var(--ease), background .25s var(--ease);
+    min-width:0;
   }
   .contact-item:hover{
     border-color:rgba(255,208,0,.2);
@@ -800,20 +816,23 @@
     text-transform:uppercase;
     color:var(--muted);
   }
-  .contact-label svg{width:12px;height:12px;}
+  .contact-label svg{width:12px;height:12px;flex:none;}
   .contact-value{
     font-size:.95rem;
     font-weight:600;
     color:var(--on-surface);
     word-break:break-word;
+    overflow-wrap:break-word;
     line-height:1.45;
   }
-  .contact-value a{color:var(--gold);}
+  .contact-value a{color:var(--gold);word-break:break-all;}
   .copy-row{
     display:flex;
     align-items:center;
     gap:8px;
+    flex-wrap:wrap;
   }
+  .copy-row .contact-value{flex:1 1 auto;min-width:0;}
   .copy-btn{
     flex:none;
     width:30px;height:30px;
@@ -850,7 +869,9 @@
     display:flex;
     align-items:center;
     gap:10px;
+    min-width:0;
   }
+  .footer-left > span{overflow-wrap:break-word;}
   .footer-links{
     display:flex;
     gap:18px;
@@ -935,11 +956,12 @@
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
     box-shadow:0 16px 40px -12px rgba(0,0,0,.7);
+    max-width:calc(100vw - 32px);
   }
   .toast.show{opacity:1;transform:translate(-50%, 0);}
   .toast svg{width:16px;height:16px;color:var(--gold);flex:none;}
 
-  /* ================= REVEAL ANIMATION ================= */
+  /* ================= REVEAL ================= */
   .reveal{
     opacity:0;
     transform:translateY(22px);
@@ -950,16 +972,22 @@
     transform:none;
   }
 
-  /* ================= RESPONSIVE ================= */
+  /* =========================================================
+     MOBILE FIXES — comprehensive responsive overhaul
+     ========================================================= */
+
+  /* Tablets & small laptops */
   @media (max-width:980px){
     .shell{
       grid-template-columns:1fr;
-      gap:36px;
-      padding-top:40px;
+      gap:32px;
+      padding:36px 20px 96px;
     }
+
+    /* TOC becomes horizontal chips */
     .toc{
       position:static;
-      padding:22px 24px;
+      padding:20px 22px;
       border-radius:var(--radius-lg);
       background:rgba(44,44,46,.7);
       border:1px solid var(--outline);
@@ -968,43 +996,316 @@
       flex-direction:row;
       flex-wrap:wrap;
       gap:8px;
+      overflow-x:visible;
     }
     .toc nav a{
-      padding:7px 14px;
+      padding:8px 14px;
       border:1px solid var(--outline);
       border-radius:999px;
-      font-size:.83rem;
+      font-size:.82rem;
+      flex:0 1 auto;
     }
     .toc nav a .toc-num{display:none;}
     .toc nav a.active::before{display:none;}
-    .toc-contact{margin-top:18px;}
+    .toc-contact{margin-top:16px;}
+
+    .hero{padding:64px 20px 52px;}
+    .hero h1{max-width:none;}
   }
 
+  /* Phones */
   @media (max-width:640px){
-    .hero{padding:56px 20px 48px;}
-    .shell{padding:28px 18px 88px;gap:28px;}
-    section.card{padding:26px 22px;}
-    .short-inner{padding:24px 22px;}
-    .card-head{gap:13px;}
-    .sec-icon{width:42px;height:42px;border-radius:12px;}
-    .sec-icon svg{width:19px;height:19px;}
-    h2{font-size:1.13rem;}
+    body{font-size:15.5px;}
+
+    .hero{
+      padding:48px 16px 40px;
+    }
+    .hero-inner{padding:0;}
+    .brand{
+      gap:12px;
+      margin-bottom:22px;
+    }
+    .logo-wrap{
+      width:46px;height:46px;
+      border-radius:13px;
+    }
+    .logo-fallback svg{width:22px;height:22px;}
+    .brand-name{font-size:.98rem;}
+    .brand-sub{font-size:.65rem;letter-spacing:.12em;}
+
+    .hero h1{
+      font-size:clamp(1.9rem, 8vw, 2.6rem);
+      margin-bottom:14px;
+      line-height:1.1;
+    }
+    .lede{
+      font-size:.96rem;
+      margin-bottom:24px;
+    }
+    .meta{
+      gap:8px;
+      margin-bottom:28px;
+    }
+    .pill{
+      padding:6px 12px;
+      font-size:.75rem;
+      gap:6px;
+    }
+    .pill svg{width:12px;height:12px;}
+
     .trust-stats{
       grid-template-columns:1fr;
-      gap:10px;
+      gap:8px;
+      max-width:100%;
     }
-    .trust-stat{padding:14px 18px;}
-    .trust-num{font-size:1.4rem;}
-    .perm{padding:16px;gap:13px;}
-    .perm-icon{width:34px;height:34px;}
-    .sub-block{padding:18px 18px;}
-    .sub-block h3{font-size:.97rem;}
-    .to-top{right:16px;bottom:16px;width:44px;height:44px;}
-    .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
-    .brand{margin-bottom:24px;}
-    .hero h1{max-width:none;}
-    .logo-wrap{width:50px;height:50px;border-radius:14px;}
-    .logo-fallback svg{width:25px;height:25px;}
+    .trust-stat{
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .trust-num{
+      font-size:1.35rem;
+      margin-bottom:0;
+      flex:none;
+      min-width:52px;
+    }
+    .trust-label{
+      font-size:.8rem;
+      line-height:1.35;
+    }
+
+    /* Shell & cards */
+    .shell{
+      padding:24px 12px 88px;
+      gap:22px;
+    }
+
+    .toc{
+      padding:16px 14px;
+      border-radius:14px;
+    }
+    .toc-head{
+      margin-bottom:12px;
+      font-size:.66rem;
+    }
+    .toc nav{gap:6px;}
+    .toc nav a{
+      padding:7px 11px;
+      font-size:.76rem;
+      line-height:1.3;
+    }
+    .toc-contact{
+      margin-top:14px;
+      padding:16px;
+      border-radius:12px;
+    }
+    .toc-contact-title{font-size:.88rem;margin-bottom:10px;}
+    .toc-contact a{font-size:.78rem;}
+
+    .short-inner{
+      padding:22px 18px;
+      border-radius:calc(var(--radius-lg) - 1px);
+    }
+    .short h2{
+      font-size:1.08rem;
+      margin-bottom:16px;
+    }
+    .short li{
+      font-size:.92rem;
+      gap:11px;
+      line-height:1.55;
+    }
+    .short li .check{
+      width:20px;height:20px;
+      border-radius:6px;
+    }
+    .short li .check svg{width:12px;height:12px;}
+    .short-eyebrow{
+      font-size:.64rem;
+      padding:4px 10px;
+      margin-bottom:14px;
+    }
+
+    section.card{
+      padding:22px 18px;
+      border-radius:14px;
+      margin-bottom:16px;
+    }
+    .card-head{
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .sec-icon{
+      width:40px;height:40px;
+      border-radius:11px;
+    }
+    .sec-icon svg{width:18px;height:18px;}
+    .sec-num{font-size:.62rem;letter-spacing:.14em;}
+    h2{font-size:1.08rem;}
+    .card p{
+      font-size:.93rem;
+      line-height:1.68;
+    }
+
+    /* Permissions stack tightly */
+    .perm{
+      padding:15px 15px;
+      gap:12px;
+      border-radius:12px;
+    }
+    .perm-icon{
+      width:32px;height:32px;
+      border-radius:9px;
+    }
+    .perm-icon svg{width:16px;height:16px;}
+    .perm-title{
+      font-size:.9rem;
+      margin-bottom:8px;
+    }
+    .chips{gap:5px;margin-bottom:9px;}
+    .chips code{
+      font-size:.62rem;
+      padding:2px 7px;
+      letter-spacing:0;
+      white-space:normal;
+    }
+    .perm-desc{font-size:.87rem;line-height:1.6;}
+
+    /* Definitions */
+    .def{
+      padding:14px 16px;
+      border-radius:11px;
+    }
+    .def dt{font-size:.89rem;}
+    .def dd{font-size:.87rem;}
+
+    /* Sub-blocks */
+    .sub-block{
+      padding:16px 16px;
+      margin-top:16px;
+      border-radius:12px;
+    }
+    .sub-block h3{
+      font-size:.94rem;
+      gap:7px;
+      margin-bottom:11px;
+    }
+    .sub-badge{
+      font-size:.56rem;
+      padding:2px 7px;
+    }
+    .sub-block p{font-size:.88rem;line-height:1.65;}
+    .sub-block ul{
+      font-size:.86rem;
+      padding-left:18px;
+      line-height:1.62;
+    }
+
+    /* Note */
+    .note{
+      padding:15px 16px;
+      gap:11px;
+      border-radius:11px;
+      margin-top:15px;
+    }
+    .note-icon{width:18px;height:18px;}
+    .note-body{font-size:.87rem;line-height:1.6;}
+
+    /* Contact */
+    .contact-grid{
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:16px;
+    }
+    .contact-item{
+      padding:15px 16px;
+      border-radius:12px;
+    }
+    .contact-label{font-size:.63rem;}
+    .contact-value{font-size:.9rem;}
+
+    /* Footer */
+    footer{padding:28px 16px 44px;}
+    .footer-inner{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:14px;
+      font-size:.8rem;
+    }
+    .footer-links{
+      gap:14px;
+      font-size:.82rem;
+    }
+
+    /* Back to top */
+    .to-top{
+      right:14px;bottom:14px;
+      width:44px;height:44px;
+    }
+    .to-top svg.arrow{width:18px;height:18px;}
+
+    /* Toast */
+    .toast{
+      bottom:16px;
+      padding:10px 16px;
+      font-size:.82rem;
+      gap:8px;
+    }
+    .toast svg{width:14px;height:14px;}
+
+    /* Reduce reveal travel on mobile */
+    .reveal{transform:translateY(14px);}
+  }
+
+  /* Very small phones */
+  @media (max-width:380px){
+    .hero{padding:42px 14px 36px;}
+    .hero h1{font-size:1.78rem;}
+    .lede{font-size:.92rem;}
+    .shell{padding:20px 10px 80px;gap:18px;}
+    section.card{padding:20px 14px;}
+    .short-inner{padding:20px 15px;}
+    .toc{padding:14px 12px;}
+    .toc nav a{font-size:.73rem;padding:6px 10px;}
+    .perm{padding:13px 13px;}
+    .perm-icon{width:30px;height:30px;}
+    .chips code{font-size:.58rem;padding:2px 6px;}
+    .def{padding:12px 14px;}
+    .sub-block{padding:14px 14px;}
+    .contact-item{padding:13px 14px;}
+    h2{font-size:1.03rem;}
+    .card-head{gap:10px;}
+    .sec-icon{width:36px;height:36px;border-radius:10px;}
+    .sec-icon svg{width:16px;height:16px;}
+  }
+
+  /* Landscape phones — keep things compact */
+  @media (max-height:500px) and (orientation:landscape){
+    .hero{padding:40px 20px 36px;}
+    .hero h1{font-size:1.9rem;}
+    .trust-stats{grid-template-columns:repeat(3, 1fr);}
+  }
+
+  /* Touch devices — disable hover-only effects */
+  @media (hover:none){
+    section.card:hover{
+      border-color:var(--outline);
+      box-shadow:none;
+    }
+    .trust-stat:hover,
+    .perm:hover,
+    .def:hover,
+    .contact-item:hover,
+    .sub-block:hover{
+      transform:none;
+      background:initial;
+    }
+    .trust-stat:hover{border-color:var(--outline);}
+    .perm:hover{background:rgba(25,26,32,.5);border-color:var(--outline-soft);}
+    .def:hover{background:rgba(25,26,32,.45);}
+    .contact-item:hover{background:rgba(25,26,32,.5);border-color:var(--outline-soft);}
+    .sub-block:hover{background:rgba(25,26,32,.5);border-color:var(--outline-soft);}
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -1029,7 +1330,6 @@
 
   <div class="hero-inner">
     <div class="brand">
-      <!-- Logo: place logo.webp next to this HTML file -->
       <div class="logo-wrap">
         <img class="header-icon" src="logo.webp" alt="StrictAlarm icon" width="56" height="56" onerror="this.classList.add('is-missing')" />
         <span class="logo-fallback" aria-hidden="true">
@@ -1094,14 +1394,14 @@
     <p class="toc-head">Contents</p>
     <nav aria-label="Table of contents">
       <a href="#overview"><span class="toc-num">01</span>Overview</a>
-      <a href="#local-data"><span class="toc-num">02</span>Data stored on device</a>
+      <a href="#local-data"><span class="toc-num">02</span>Data on device</a>
       <a href="#permissions"><span class="toc-num">03</span>Permissions</a>
       <a href="#ads-purchases"><span class="toc-num">04</span>Ads &amp; purchases</a>
       <a href="#third-party"><span class="toc-num">05</span>Other third parties</a>
-      <a href="#retention"><span class="toc-num">06</span>Retention &amp; deletion</a>
-      <a href="#children"><span class="toc-num">07</span>Children's privacy</a>
+      <a href="#retention"><span class="toc-num">06</span>Retention</a>
+      <a href="#children"><span class="toc-num">07</span>Children</a>
       <a href="#changes"><span class="toc-num">08</span>Policy changes</a>
-      <a href="#contact"><span class="toc-num">09</span>Contact us</a>
+      <a href="#contact"><span class="toc-num">09</span>Contact</a>
     </nav>
 
     <div class="toc-contact">
@@ -1117,7 +1417,6 @@
   <!-- ================= MAIN ================= -->
   <main>
 
-    <!-- Short version -->
     <div class="short reveal">
       <div class="short-inner">
         <span class="short-eyebrow">
@@ -1136,7 +1435,7 @@
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span><strong style="color:var(--on-surface)">To keep StrictAlarm free</strong>, optional ads are served by Google AdMob, and the one-time premium purchase is managed by RevenueCat. See <a href="#ads-purchases" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Section 04</a> for exactly what these services handle.</span>
+            <span><strong style="color:var(--on-surface)">To keep StrictAlarm free</strong>, optional ads are served by Google AdMob, and the one-time premium purchase is managed by RevenueCat. See <a href="#ads-purchases">Section 04</a> for exactly what these services handle.</span>
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -1220,7 +1519,7 @@
           <dd>
             A local cache indicating that your one-time premium purchase has been unlocked, so
             premium features work offline. The authoritative purchase record lives with Google
-            Play and RevenueCat (see <a href="#ads-purchases" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Section 04</a>).
+            Play and RevenueCat (see <a href="#ads-purchases">Section 04</a>).
           </dd>
         </div>
       </dl>
@@ -1655,7 +1954,7 @@
 
       progress.style.width = (pct * 100) + '%';
 
-      if (scrollTop > 600) {
+      if (scrollTop > 500) {
         toTop.classList.add('show');
       } else {
         toTop.classList.remove('show');
@@ -1672,6 +1971,8 @@
       }
     }, { passive: true });
 
+    window.addEventListener('resize', update, { passive: true });
+
     update();
 
     toTop.addEventListener('click', function () {
@@ -1680,7 +1981,7 @@
   })();
 
   /* ============================================================
-     LOGO FALLBACK (if logo.webp fails to load, show clock icon)
+     LOGO FALLBACK
      ============================================================ */
   (function () {
     var imgs = document.querySelectorAll('.header-icon');
@@ -1764,7 +2065,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
 
     els.forEach(function (el) { observer.observe(el); });
   })();
